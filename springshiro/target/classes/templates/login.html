@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Ventura - Login</title>
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+		<!-- Main CSS -->
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+		<!--[if lt IE 9]>
+			<script th:src="@{/js/html5shiv.min.js}"></script>
+			<script th:src="@{/js/respond.min.js}"></script>
+		<![endif]-->
+    </head>
+    <body>
+		<!-- Main Wrapper -->
+        <div class="main-wrapper login-body">
+            <div class="login-wrapper">
+            	<div class="container">
+                	<div class="loginbox">
+                    	<div class="login-left">
+							<img class="img-fluid" th:src="@{/img/logo.png}" alt="Logo">
+                        </div>
+                        <div class="login-right">
+							<div class="login-right-wrap">
+								<h1 th:text="#{login.tip}">Please sign in</h1>
+								<!--<p class="account-subtitle">Access to our dashboard</p>-->
+								<!-- Form-->
+								<form action="/user/login" method="post">
+									<div class="form-group">
+										<input class="form-control" name="account" type="text" th:placeholder="#{login.account}">
+									</div>
+									<div class="form-group">
+										<input class="form-control" name="password" type="text" th:placeholder="#{login.password}">
+									</div>
+									<!--  如果msg的值为空则显示-->
+									<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+									<div class="form-group">
+										<button class="btn btn-primary btn-block" type="submit">[[#{login.btn}]]</button>
+									</div>
+								</form>
+								<!-- /Form -->
+								<div class="text-center forgotpass">
+									<!--<a href="forgot-password.html">Forgot Password?</a>-->
+								</div>
+								<!-- Social Login -->
+								<div style="text-align: center;">
+									<a th:href="@{/login.html(l=zh_CN)}" >中文</a>
+									<a th:href="@{/login.html(l=en_US)}" >English</a>
+								</div>
+								<!-- /Social Login -->
+								<div class="text-center dont-have">
+									<input type="checkbox" name="remember">记住我
+									<!--Don’t have an account? <a href="register.html">Register</a>-->
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+        <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+		<!-- Bootstrap Core JS -->
+        <script th:src="@{/js/popper.min.js}"></script>
+        <script th:src="@{/js/bootstrap.min.js}"></script>
+		<!-- Custom JS -->
+		<script th:src="@{/js/script.js}"></script>
+		
+    </body>
+</html>

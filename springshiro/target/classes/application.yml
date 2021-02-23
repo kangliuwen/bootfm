@@ -1,0 +1,41 @@
+spring:
+  resources:
+    static-locations: classpath:/mystatic/
+  thymeleaf:
+    cache: false
+  ## 国际化文件路径
+  messages:
+    basename: i18n/login
+  mvc:
+    date-format: yyyy-MM-dd
+  ## druid连接池
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/mybatis?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT1FROMDUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+  mail:
+    username: 1094127610@qq.com
+    password: okqfdarcyatgfjbe
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtl:
+          ssl:
+            enable: true
+mybatis:
+  type-aliases-package: com.kangliuwen.pojo
+  mapper-locations: classpath:/mapper/*.xml

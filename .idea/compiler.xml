@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="shiro" />
+        <module name="provider-server" />
+        <module name="consumer-server" />
+        <module name="springsecurity" />
+        <module name="bootfm" />
+        <module name="springshiro" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bootfm" target="1.8" />
+      <module name="consumer-server" target="1.8" />
+      <module name="provider-server" target="1.8" />
+      <module name="shiro" target="1.8" />
+      <module name="springsecurity" target="1.8" />
+      <module name="springshiro" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bootfm" options="-parameters" />
+      <module name="consumer-server" options="-parameters" />
+      <module name="provider-server" options="-parameters" />
+      <module name="shiro" options="-parameters" />
+      <module name="springsecurity" options="-parameters" />
+      <module name="springshiro" options="-parameters" />
+    </option>
+  </component>
+</project>
